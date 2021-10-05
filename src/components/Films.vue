@@ -19,6 +19,8 @@ export default {
         }
     },
 
+    props : ['infoProps'],
+
     components : {
         Film
     },
