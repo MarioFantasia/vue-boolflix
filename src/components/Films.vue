@@ -1,7 +1,7 @@
 <template>
     <section>
         <ul
-        v-for="(elm, index) in films" :key="index">
+        v-for="(elm, index) in filmFilter" :key="index">
             <Film :objectFilm = 'elm'></Film>
         </ul>
     </section>
@@ -36,10 +36,23 @@ export default {
     .then((res) => {
         /* console.log(res.data.results); */ //cerco i dati in console
         this.films = res.data.results;
-    }
-    
-    );
+    });
+    },
 
+    computed : {
+        filmFilter() {
+            const filmFiltered = this.films.filter(
+                (elm) => {
+                    if( this.infoProps == '' ) {
+                        return false;
+
+                    } else if( elm.title.toLowerCase().includes(this.infoProps.toLowerCase()) ) {
+                        return true;
+                    }
+                }
+            )
+            return filmFiltered;
+        }
     }
 }
 </script>
