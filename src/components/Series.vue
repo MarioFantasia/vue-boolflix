@@ -18,21 +18,28 @@ export default {
             series : []
         }
     },
+
+    props : ['propsSerie'],
+
     components : {
         Serie
     },
 
-    created() {
-        axios.get('https://api.themoviedb.org/3/search/tv', {
-            params : {
-                api_key : '4fb27bad81fd725bbb6d36e4ce533e33',
-                query : 'big',
-                language : 'it-IT'
-            }
-        })
-        .then((res) => {
-            this.series = res.data.results;
-        })
+     watch : { //resto in ascolto per intercettare la variazione del valore da dare alla query
+        propsSerie : function() {
+            /* console.log(this.propsSerie); */
+            axios.get('https://api.themoviedb.org/3/search/tv', {
+                params : {
+                    api_key : '4fb27bad81fd725bbb6d36e4ce533e33',
+                    query : this.propsSerie,
+                    language : 'it-IT'
+                }
+            })
+            .then((res)=> {
+                this.series = res.data.results;
+            });
+        }
+        
     }
 }
 </script>

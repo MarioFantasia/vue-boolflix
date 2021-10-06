@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <Header @search="searchFilm"></Header>
-    <h2>FILMS</h2>
+    <Header @search="searchItem"></Header>
+    <h2 style="color:red">FILMS</h2>
     <Films :propsFilm="takeFilm"></Films>
-    <h2>SERIES</h2>
-    <Series></Series>
+    <h2 style="color:red">SERIES</h2>
+    <Series :propsSerie="takeSerie"></Series>
   </div>
 </template>
 
@@ -21,13 +21,15 @@ export default {
 
     data() {
       return {
-        takeFilm : ""
+        takeFilm : "",
+        takeSerie : ""
       }
     },
 
     methods : {
-      searchFilm(film) {
-        this.takeFilm = film;
+      searchItem(item) {
+        this.takeFilm = item;
+        this.takeSerie = item;
       }
     }
 }
