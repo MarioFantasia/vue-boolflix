@@ -2,8 +2,7 @@
         <li>
             <h3>{{objectFilm.title}}</h3>
             <h3>{{objectFilm.original_title}}</h3>
-            <!-- <h4>{{objectFilm.original_language}}</h4> -->
-            <img :src="'https://www.unknown.nu/flags/images/' + objectFilm.original_language + '-100'" :alt="objectFilm.original_language">
+            <img style="width:25px" :src="'https://www.unknown.nu/flags/images/' + objectFilm.original_language + '-100'" :alt="objectFilm.original_language">
             <h5>{{objectFilm.vote_average}}</h5>
         </li>
 </template>

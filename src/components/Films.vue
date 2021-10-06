@@ -25,7 +25,7 @@ export default {
         Film
     },
 
-    watch : {
+    watch : { //resto in ascolto per intercettare la variazione del valore da dare alla query
         propsFilm : function() {
             /* console.log(this.propsFilm); */
             axios.get('https://api.themoviedb.org/3/search/movie', {
