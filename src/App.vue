@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header @search="searchFilm"></Header>
-    <Films :infoProps="takeFilm"></Films>
+    <Films :propsFilm="takeFilm"></Films>
   </div>
 </template>
 
