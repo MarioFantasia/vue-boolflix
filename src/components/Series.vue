@@ -1,11 +1,16 @@
 <template>
-    <section>
-    <ul
-    v-for="(elm, index) in series" :key="index">
-        <Serie :objectSerie = 'elm'></Serie>
-    </ul>
+        <section>
+        <div class="container">
+            <div class="row row-cols-lg-5">
+                <div class="col-sm-12 col-md-6 col-lg"
+                v-for="(elm, index) in series" :key="index">
+                    <Serie :objectSerie = 'elm'></Serie>
+                </div>
+            </div>
+        </div>
     </section>
 </template>
+
 
 <script>
 

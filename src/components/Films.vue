@@ -1,9 +1,13 @@
 <template>
     <section>
-        <ul
-        v-for="(elm, index) in filmFilter" :key="index">
-            <Film :objectFilm = 'elm'></Film>
-        </ul>
+        <div class="container">
+            <div class="row row-cols-lg-5">
+                <div class="col-sm-12 col-md-6 col-lg"
+                v-for="(elm, index) in filmFilter" :key="index">
+                    <Film :objectFilm = 'elm'></Film>
+                </div>
+            </div>
+        </div>
     </section>
 </template>
 

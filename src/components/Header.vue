@@ -28,10 +28,14 @@ export default {
 
 <style lang="scss" scoped> 
     header {
+        width: 100%;
+        height: 70px;
         padding: 10px;
+        position: fixed;
         justify-content: space-between;
         background-color: black;
         opacity: 0.8;
+        z-index: 1;
         .logo {
             font-size: 30px;
             font-weight: 800;

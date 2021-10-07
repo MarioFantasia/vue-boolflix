@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <Header @search="searchItem"></Header>
-    <h2 style="color:red">FILMS</h2>
-    <Films :propsFilm="takeFilm"></Films>
-    <h2 style="color:red">SERIES</h2>
-    <Series :propsSerie="takeSerie"></Series>
+    <section class="main_section fel">
+      <h2 v-if="this.takeFilm != ''" style="color:red">FILMS</h2>
+      <Films :propsFilm="takeFilm"></Films>
+      <h2 v-if="this.takeFilm != ''" style="color:red">SERIES</h2>
+      <Series :propsSerie="takeSerie"></Series>
+    </section>
   </div>
 </template>
 
@@ -37,9 +39,19 @@ export default {
 </script>
 
 <style lang="scss">
-/* importo fontawesome */
-@import '~@fortawesome/fontawesome-free/css/all.css';
-@import './assets/style/common.scss'
+  /* importo fontawesome */
+  @import '~@fortawesome/fontawesome-free/css/all.css';
+  /* file common.scss */
+  @import './assets/style/common.scss';
+
+  .main_section {
+    max-width: 100%;
+    padding-top: 70px;
+    min-height: 100vh;
+    background-color: rgb(83, 83, 83);
+  }
+
+
 </style>
 
 
