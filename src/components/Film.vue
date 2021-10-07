@@ -6,7 +6,14 @@
             <img v-else src="../assets/img/imageNoPresent.png" alt="Img" style="width:342px">
             <img style="width:25px" :src="'https://www.unknown.nu/flags/images/' + objectFilm.original_language + '-100'" :alt="objectFilm.original_language">
             <!-- <h5>{{objectFilm.vote_average}}</h5> -->
-            <h5>{{this.vote}}</h5>
+            <h5>{{this.goldVote}}</h5>
+            <!-- è necessario mettere dentro a due span per non dare errore di duplicazione della chiave -->
+            <span>
+                <i v-for="gold in this.goldVote" :key="gold" class="fas fa-star" style="color:yellow"></i>
+            </span>
+            <span>
+                <i v-for="empty in this.emptyVote" :key="empty" class="far fa-star"></i> 
+            </span>
         </li>
 </template>
 
@@ -15,7 +22,8 @@ export default {
     name : 'Film',
     data() {
         return {
-            vote : Math.round(this.objectFilm.vote_average/2)
+            goldVote : Math.round(this.objectFilm.vote_average/2),
+            emptyVote : Math.round(5 - this.objectFilm.vote_average/2)
         }
     },
     props : {
