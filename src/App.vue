@@ -12,6 +12,7 @@
 import Header from './components/Header.vue';
 import Films from './components/Films.vue'; 
 import Series from './components/Series.vue'
+
 export default {
     components : {
       Header,
@@ -38,6 +39,7 @@ export default {
 <style lang="scss">
 /* importo fontawesome */
 @import '~@fortawesome/fontawesome-free/css/all.css';
+@import './assets/style/common.scss'
 </style>
 
 
