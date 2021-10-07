@@ -12,6 +12,11 @@
 <script>
 export default {
     name : 'Serie',
+        data() {
+        return {
+            vote : Math.round(this.objectFilm.vote_average/2)
+        }
+    },
     props : {
         objectSerie : Object
     }

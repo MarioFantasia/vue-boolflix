@@ -5,13 +5,19 @@
             <img v-if="objectFilm.poster_path" :src="'https://image.tmdb.org/t/p/w342/' + objectFilm.poster_path" alt="Img">
             <img v-else src="../assets/img/imageNoPresent.png" alt="Img" style="width:342px">
             <img style="width:25px" :src="'https://www.unknown.nu/flags/images/' + objectFilm.original_language + '-100'" :alt="objectFilm.original_language">
-            <h5>{{objectFilm.vote_average}}</h5>
+            <!-- <h5>{{objectFilm.vote_average}}</h5> -->
+            <h5>{{this.vote}}</h5>
         </li>
 </template>
 
 <script>
 export default {
     name : 'Film',
+    data() {
+        return {
+            vote : Math.round(this.objectFilm.vote_average/2)
+        }
+    },
     props : {
         objectFilm : Object
     }
