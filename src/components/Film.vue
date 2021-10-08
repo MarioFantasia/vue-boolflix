@@ -15,7 +15,7 @@
             </div>
             
             <div class="votes">
-                
+                <!-- è necessario mettere dentro a due span per non dare errore di duplicazione della chiave -->
                 <span>
                     <i v-for="gold in this.goldVote" :key="gold" class="fas fa-star" style="color:yellow"></i>
                 </span>
@@ -103,4 +103,3 @@ export default {
 }
 
 </style>
-<!-- è necessario mettere dentro a due span per non dare errore di duplicazione della chiave -->
