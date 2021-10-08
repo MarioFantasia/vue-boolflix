@@ -1,10 +1,10 @@
 <template>
         <section>
         <div class="container">
-            <h2 class="typeOfItem" v-if="this.series != false">SERIES</h2>
+            <h2 class="typeOfItem" v-if="this.serieFilter!= false">SERIES</h2>
             <div class="row row-cols-lg-5">
                 <div class="col-sm-12 col-md-6 col-lg"
-                v-for="(elm, index) in series" :key="index">
+                v-for="(elm, index) in serieFilter" :key="index">
                     <Serie :objectSerie = 'elm'></Serie>
                 </div>
             </div>
@@ -46,6 +46,22 @@ export default {
             });
         }
         
+    },
+
+    computed : {
+        serieFilter() {
+            const serieFiltered = this.series.filter(
+                (elm) => {
+                    if( this.propsSerie == '' ) {
+                        return false;
+
+                    } else if( elm.name.toLowerCase().includes(this.propsSerie.toLowerCase()) ) {
+                        return true;
+                    }
+                }
+            )
+            return serieFiltered;
+        }
     }
 }
 </script>
