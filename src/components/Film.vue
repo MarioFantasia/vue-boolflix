@@ -6,22 +6,19 @@
         </div>
         <div class="info_card">
             <div class="title">
-                <h3>{{objectFilm.title}}</h3>
-                <h3>{{objectFilm.original_title}}</h3>
+                <h3><span>Titolo: </span>{{objectFilm.title}}</h3>
+                <h3><span>Titolo originale: </span>{{objectFilm.original_title}}</h3>
             </div>
             
             <div class="language">
+                <span>Lingua: </span>
                 <img style="width:25px" :src="'https://www.unknown.nu/flags/images/' + objectFilm.original_language + '-100'" :alt="objectFilm.original_language">
             </div>
             
             <div class="votes">
                 <!-- è necessario mettere dentro a due span per non dare errore di duplicazione della chiave -->
-                <span>
-                    <i v-for="gold in this.goldVote" :key="gold" class="fas fa-star" style="color:yellow"></i>
-                </span>
-                <span>
-                    <i v-for="empty in this.emptyVote" :key="empty" class="far fa-star"></i> 
-                </span>
+                <span>Voto: <i v-for="gold in this.goldVote" :key="gold" class="fas fa-star" style="color:yellow"></i></span>
+                <span><i v-for="empty in this.emptyVote" :key="empty" class="far fa-star"></i> </span>
             </div>
 
             <div class="description">
@@ -57,7 +54,7 @@ export default {
 
     .poster {
 
-            img {
+        img {
             margin: 0;
             width: 100%;
             height: 350px;
@@ -71,8 +68,6 @@ export default {
         background-color: gray;
         display: none;
         position: absolute;
-        top: 2px;
-        left: 2px;
     }
 
     .description {
@@ -85,6 +80,10 @@ export default {
     h3 {
         font-size: 15px;
         font-weight: 800;
+        span {
+            font-size: 16px;
+            font-weight: 800;
+        }
     }
 
     h5 {
@@ -95,7 +94,7 @@ export default {
 
     /* effetti */
     .card:hover .poster {
-    display: none;
+    visibility: hidden;
     }
 
     .card:hover .info_card {

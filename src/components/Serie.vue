@@ -7,19 +7,18 @@
 
         <div class="info_card">
             <div class="title">
-                <h3>{{objectSerie.name}}</h3>
-                <h3>{{objectSerie.original_name}}</h3>
+                <h3><span>Titolo: </span>{{objectSerie.name}}</h3>
+                <h3><span>Titolo originale: </span>{{objectSerie.original_name}}</h3>
             </div>
             
             <div class="language">
+                <span>Lingua: </span>
                 <img style="width:25px" :src="'https://www.unknown.nu/flags/images/' + objectSerie.original_language + '-100'" :alt="objectSerie.original_language">
             </div>
             
             <div class="votes">
                 <!-- è necessario mettere dentro a due span per non dare errore di duplicazione della chiave -->
-                <span>
-                    <i v-for="gold in this.goldVote" :key="gold" class="fas fa-star" style="color:yellow"></i>
-                </span>
+                <span>Voto: <i v-for="gold in this.goldVote" :key="gold" class="fas fa-star" style="color:yellow"></i></span>
                 <span>
                     <i v-for="empty in this.emptyVote" :key="empty" class="far fa-star"></i> 
                 </span>
@@ -70,8 +69,6 @@ export default {
         background-color: gray;
         display: none;
         position: absolute;
-        top: 2px;
-        left: 2px;
     }
 
     .description {
@@ -83,7 +80,11 @@ export default {
     /* font */
     h3 {
         font-size: 15px;
-        font-weight: 800;
+        font-weight: 700;
+        span {
+            font-size: 16px;
+            font-weight: 800;
+        }
     }
 
     h5 {
@@ -94,10 +95,10 @@ export default {
 
     /* effetti */
     .card:hover .poster {
-    display: none;
+        visibility: hidden;
     }
 
     .card:hover .info_card {
-    display: block;
+        display: block;
 }
 </style>
