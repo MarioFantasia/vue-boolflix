@@ -2,7 +2,7 @@
     <header class="flex">
         <!-- logo -->
         <div class="logo flex">
-            <div>BOOLFLIX</div>
+            <div><a href="#">BOOLFLIX</a></div>
         </div>
         <!-- ricerca elementi -->
         <div class="search flex">
@@ -46,7 +46,10 @@ export default {
         .logo {
             font-size: 30px;
             font-weight: 800;
-            color: red;
+            a {
+                text-decoration: none;
+                color: red;
+            }
         }
         
         .search {
