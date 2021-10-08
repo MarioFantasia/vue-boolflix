@@ -1,6 +1,7 @@
 <template>
         <section>
         <div class="container">
+            <h2 class="typeOfItem" v-if="this.series != false">SERIES</h2>
             <div class="row row-cols-lg-5">
                 <div class="col-sm-12 col-md-6 col-lg"
                 v-for="(elm, index) in series" :key="index">
