@@ -4,8 +4,8 @@
             <img v-if="objectFilm.poster_path" :src="'https://image.tmdb.org/t/p/w342/' + objectFilm.poster_path" alt="Img">
             <img v-else src="../assets/img/imageNoPresent.png" alt="Img">
         </div>
-
-            <!-- <div class="title">
+        <div class="info_card">
+            <div class="title">
                 <h3>{{objectFilm.title}}</h3>
                 <h3>{{objectFilm.original_title}}</h3>
             </div>
@@ -22,8 +22,14 @@
                 <span>
                     <i v-for="empty in this.emptyVote" :key="empty" class="far fa-star"></i> 
                 </span>
-            </div> -->
+            </div>
+
+            <div class="description">
+                <h5>{{objectFilm.overview}}</h5>
+            </div>
+        </div>
     </div>
+
 </template>
 
 <script>
@@ -38,21 +44,63 @@ export default {
     props : {
         objectFilm : Object
     }
+
 }
 </script>
 
 <style lang="scss" scoped>
     .card {
+        border: none;
         margin-bottom: 10px;
+        position: relative;
     }
 
     .poster {
-        border: 2px solid white;
+
+            img {
+            margin: 0;
+            width: 100%;
+            height: 350px;
+        }
     }
-    img {
-        margin: 0;
+
+    .info_card {
         width: 100%;
         height: 350px;
+        padding: 5px;
+        background-color: gray;
+        display: none;
+        position: absolute;
+        top: 2px;
+        left: 2px;
     }
+
+    .description {
+        height: 200px;
+        overflow-y: auto;
+        scrollbar-width: 1px;
+    }
+
+    /* font */
+    h3 {
+        font-size: 15px;
+        font-weight: 800;
+    }
+
+    h5 {
+        font-size: 10px;
+    }
+
+
+
+    /* effetti */
+    .card:hover .poster {
+    display: none;
+    }
+
+    .card:hover .info_card {
+    display: block;
+}
+
 </style>
 <!-- è necessario mettere dentro a due span per non dare errore di duplicazione della chiave -->

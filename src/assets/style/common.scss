@@ -9,8 +9,21 @@
     margin: 0;
     padding: 0;
     font-family: 'Martel Sans', sans-serif;
+    
+}
+/* rimuove le scrollbar da tutti gli elementi */
+::-webkit-scrollbar { 
+    display: none; 
 }
 
 .flex {
     display: flex;
+}
+
+.block {
+    display: block;
+}
+
+.none {
+    display: none;
 }
